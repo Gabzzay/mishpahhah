@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Greenfield Academy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Greenfield Academy</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label><br />
+                <input type="text" id="username" required /><br /><br />
+
+                <label for="password">Password:</label><br />
+                <input type="password" id="password" required /><br /><br />
+
+                <label for="role">Role:</label><br />
+                <select id="role" required>
+                    <option value="">--Select Role--</option>
+                    <option value="student">Student</option>
+                    <option value="admin">Admin</option>
+                </select><br /><br />
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="loginMsg" style="color: red;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Greenfield Academy</p>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const role = document.getElementById("role").value;
+            const message = document.getElementById("loginMsg");
+
+            // Dummy login logic
+            if ((role === "student" && username === "student" && password === "1234") ||
+                (role === "admin" && username === "admin" && password === "admin123")) {
+                message.style.color = "green";
+                message.textContent = "Login successful!";
+                setTimeout(() => {
+                    window.location.href = role === "admin" ? "admin-dashboard.html" : "student-dashboard.html";
+                }, 1000);
+            } else {
+                message.textContent = "Invalid credentials. Try again.";
+            }
+        });
+    </script>
+</body>
+
+</html>

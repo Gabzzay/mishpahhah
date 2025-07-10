@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>School Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200?text=Classroom" alt="Classroom" />
+            <img src="https://via.placeholder.com/300x200?text=Library" alt="Library" />
+            <img src="https://via.placeholder.com/300x200?text=Science+Lab" alt="Science Lab" />
+            <img src="https://via.placeholder.com/300x200?text=Sports+Day" alt="Sports Day" />
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Greenfield Academy</p>
+    </footer>
+</body>
+
+</html>
